@@ -2,6 +2,11 @@
 
 Hi there, I'm Yuuta (aka. Trumeet).
 
+## 语言？ / What's your language?
+Prefered Mandarin, a bit English.
+
+国语（普通话） / 一点英语
+
 ## 你是谁？
 
 ~~弱鸡~~ 学生狗 | 业余 Java 开发者，主要方向后端 & Android。
