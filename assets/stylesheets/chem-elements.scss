@@ -23,3 +23,13 @@
 .chem-element[element="sodium"]:hover {
     background: #faa3a3;
 }
+
+.chem-element[element=tantalum]::before {
+    content: '73';
+    font-size: .45em;
+    vertical-align: -.5em;
+}
+
+.chem-element[element=tantalum]:hover {
+    background: #faa3a3;
+}
