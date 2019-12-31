@@ -5,14 +5,6 @@
     <link href="assets/stylesheets/index.bundle.min.css" rel="stylesheet">
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, minimum-scale=1, maximum-scale=1" />
-    <!-- Global site tag (gtag.js) - Google Analytics -->
-    <script async src="https://www.googletagmanager.com/gtag/js?id=UA-85804209-7"></script>
-    <script>
-        window.dataLayer = window.dataLayer || [];
-        function gtag() { dataLayer.push(arguments); }
-        gtag('js', new Date());
-        gtag('config', 'UA-85804209-7');
-    </script>
     <meta name="google-site-verification" content="Posb7_rsoi9D--h0MvUxnZ1n-wn67V3zpdMfncH2inQ" />
     <title>It's YuutaW</title>
 </head>
@@ -214,87 +206,6 @@
             </div>
         </div>
     </div>
-	<!-- https://stackoverflow.com/a/37142149 -->
-	<script>
-	var shakingElements = [];
-
-	var shake = function (element, magnitude = 16, angular = false) {
-	  //First set the initial tilt angle to the right (+1) 
-	  var tiltAngle = 1;
-
-	  //A counter to count the number of shakes
-	  var counter = 1;
-
-	  //The total number of shakes (there will be 1 shake per frame)
-	  var numberOfShakes = 15;
-
-	  //Capture the element's position and angle so you can
-	  //restore them after the shaking has finished
-	  var startX = 0,
-		  startY = 0,
-		  startAngle = 0;
-
-	  // Divide the magnitude into 10 units so that you can 
-	  // reduce the amount of shake by 10 percent each frame
-	  var magnitudeUnit = magnitude / numberOfShakes;
-
-	  //The `randomInt` helper function
-	  var randomInt = (min, max) => {
-		return Math.floor(Math.random() * (max - min + 1)) + min;
-	  };
-
-	  //Add the element to the `shakingElements` array if it
-	  //isn't already there
-	  if(shakingElements.indexOf(element) === -1) {
-		//console.log("added")
-		shakingElements.push(element);
-
-		//Add an `updateShake` method to the element.
-		//The `updateShake` method will be called each frame
-		//in the game loop. The shake effect type can be either
-		//up and down (x/y shaking) or angular (rotational shaking).
-		//Shake the element while the `counter` is less than 
-		//the `numberOfShakes`
-		upAndDownShake()
-	  }
-	  function upAndDownShake() {
-			if (counter < numberOfShakes) {
-
-			  //Reset the element's position at the start of each shake
-			  element.style.transform = 'translate(' + startX + 'px, ' + startY + 'px)';
-
-			  //Reduce the magnitude
-			  magnitude -= magnitudeUnit;
-
-			  //Randomly change the element's position
-			  var randomX = randomInt(-magnitude, magnitude);
-			  var randomY = randomInt(-magnitude, magnitude);
-
-			  element.style.transform = 'translate(' + randomX + 'px, ' + randomY + 'px)';
-
-			  //Add 1 to the counter
-			  counter += 1;
-
-			  requestAnimationFrame(upAndDownShake);
-			}
-
-			//When the shaking is finished, restore the element to its original 
-			//position and remove it from the `shakingElements` array
-			if (counter >= numberOfShakes) {
-			  element.style.transform = 'translate(' + startX + ', ' + startY + ')';
-			  shakingElements.splice(shakingElements.indexOf(element), 1);
-			}
-		}
-	};
-	</script>
-	<script>
-		var onload = function () {
-			if (window.location.hash === '#donate') {
-				console.log('Highlighting donate button')
-				setTimeout(function() { shake(document.getElementById('donate')) }, 300)
-			}
-		}
-	</script>
 </body>
 
 </html>
